@@ -20,6 +20,11 @@ import android.widget.TextView;
  */
 public class MainActivity extends AppCompatActivity {
     int quantity = 3;
+    int amount = quantity * 5;
+    String priceMessage = amount + "€"  ;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,23 +36,28 @@ public class MainActivity extends AppCompatActivity {
      */
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void submitOrder(View view) {
+        priceMessage=priceMessage+"\n Thank You!";
 
-        displayPrice(quantity * 5);
+        displayMessage(priceMessage);
+
     }
+
     /**
      * This method is called when the plus button is clicked.
      */
-    public void incrementQuantity(View view){
+    public void incrementQuantity(View view) {
         quantity = quantity + 1;
         display(quantity);
     }
+
     /**
      * This method is called when the minus button is clicked.
      */
-    public void decrementQuantity(View view){
+    public void decrementQuantity(View view) {
         quantity = quantity - 1;
         display(quantity);
     }
+
     /**
      * This method displays the given quantity value on the screen.
      */
@@ -56,9 +66,20 @@ public class MainActivity extends AppCompatActivity {
         quantityTextView.setText("" + number);
     }
 
+    /**
+     * This method displays the given text on the screen.
+     */
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
+
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
+
+
 }
