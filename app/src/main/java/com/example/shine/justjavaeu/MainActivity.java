@@ -39,7 +39,15 @@ public class MainActivity extends AppCompatActivity {
         priceMessage=priceMessage+"\n Thank You!";
 
         displayMessage(priceMessage);
-
+        calculatePrice(quantity, 10);
+    }
+    /**
+     * Calculates the price of the order.
+     *
+     * @param quantity is the number of cups of coffee ordered
+     */
+    private void calculatePrice(int quantity, int test) {
+        int price = quantity * 5;
     }
 
     /**
@@ -47,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void incrementQuantity(View view) {
         quantity = quantity + 1;
-        display(quantity);
+        displayQuantity(quantity);
     }
 
     /**
@@ -55,15 +63,15 @@ public class MainActivity extends AppCompatActivity {
      */
     public void decrementQuantity(View view) {
         quantity = quantity - 1;
-        display(quantity);
+        displayQuantity(quantity);
     }
 
     /**
      * This method displays the given quantity value on the screen.
      */
-    private void display(int number) {
+    private void displayQuantity(int numberOfCoffees) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        quantityTextView.setText("" + number);
+        quantityTextView.setText("" + numberOfCoffees);
     }
 
     /**
