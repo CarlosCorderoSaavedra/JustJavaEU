@@ -20,8 +20,9 @@ import android.widget.TextView;
  */
 public class MainActivity extends AppCompatActivity {
     int quantity = 3;
-    int amount = quantity * 5;
-    String priceMessage = amount + "€"  ;
+    int pricePerCup = 5;
+    int price = calculatePrice();
+    String priceMessage;
 
 
 
@@ -36,18 +37,33 @@ public class MainActivity extends AppCompatActivity {
      */
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void submitOrder(View view) {
-        priceMessage=priceMessage+"\n Thank You!";
 
+        createOrderSummary();
         displayMessage(priceMessage);
-        calculatePrice(quantity, 10);
+
+    }
+
+    public String createOrderSummary(){
+
+        String nameOrder="Kaptain Kunal \n";
+        String quantityOrder= "Quantity: "+ quantity + "\n";
+        String thanksOrder ="Thank You!";
+        String totalOrder = "Total: " + price + "€ \n";
+        priceMessage=nameOrder+quantityOrder+totalOrder+thanksOrder;
+
+        return priceMessage;
+
+
     }
     /**
      * Calculates the price of the order.
      *
-     * @param quantity is the number of cups of coffee ordered
+     * @return  total price
      */
-    private void calculatePrice(int quantity, int test) {
-        int price = quantity * 5;
+    private int calculatePrice() {
+
+        int price = quantity * pricePerCup;
+        return price;
     }
 
     /**
