@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     String priceMessage;
     int quantity = 3;
     int pricePerCup = 5;
-    int price;
+    int price = calculatePrice();
 
 
 
@@ -39,11 +39,14 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void submitOrder(View view) {
 
+
         price = calculatePrice();
+
         createOrderSummary();
         displayMessage(priceMessage);
 
     }
+
 
     private String createOrderSummary(){
 
@@ -65,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private int calculatePrice() {
 
-        int price = quantity * pricePerCup;
+        price = quantity * pricePerCup;
         return price;
     }
 
