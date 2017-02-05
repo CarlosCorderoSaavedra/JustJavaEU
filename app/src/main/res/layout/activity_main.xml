@@ -62,10 +62,10 @@
         android:textAllCaps="true"/>
 
     <TextView
-        android:id="@+id/price_text_view"
+        android:id="@+id/order_summay_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="€0"
+        android:text="0€"
         android:textSize="16sp"
         android:layout_marginTop="16dp"
         android:textColor="@android:color/black" />

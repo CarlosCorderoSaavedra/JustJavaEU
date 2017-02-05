@@ -4,5 +4,5 @@
     <string name="button_order">ORDER</string>
     <string name="button_increment">+</string>
     <string name="button_decrement">-</string>
-    <string name="text_price">PRICE</string>
+    <string name="text_price">Order summary</string>
 </resources>
