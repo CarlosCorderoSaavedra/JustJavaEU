@@ -8,11 +8,13 @@ package com.example.shine.justjavaeu;
  */
 
 import android.icu.text.NumberFormat;
+import android.icu.text.StringPrepParseException;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 /**
@@ -23,8 +25,7 @@ public class MainActivity extends AppCompatActivity {
     int quantity = 3;
     int pricePerCup = 5;
     int price = calculatePrice();
-
-
+    boolean hasWhippedCream;
 
 
     @Override
@@ -40,9 +41,8 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void submitOrder(View view) {
 
-
         price = calculatePrice();
-
+        whippedCreamChecked();
         createOrderSummary();
         displayMessage(priceMessage);
 
@@ -53,15 +53,19 @@ public class MainActivity extends AppCompatActivity {
 
 
         String nameOrder="Kaptain Kunal \n";
+        String toppingBoolean = "Add whipped cream ?  " + hasWhippedCream + "\n";
         String quantityOrder= "Quantity: "+ quantity + "\n";
         String thanksOrder ="Thank You!";
         String totalOrder = "Total: " + price + "€ \n";
-        priceMessage=nameOrder+quantityOrder+totalOrder+thanksOrder;
+        priceMessage=nameOrder+toppingBoolean+quantityOrder+totalOrder+thanksOrder;
 
         return priceMessage;
 
 
     }
+
+
+
     /**
      * Calculates the price of the order.
      *
@@ -95,6 +99,11 @@ public class MainActivity extends AppCompatActivity {
     private void displayQuantity(int numberOfCoffees) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + numberOfCoffees);
+    }
+
+    private void whippedCreamChecked (){
+        CheckBox toppingsCheckBox = (CheckBox) findViewById(R.id.whipped_cream_check_box);
+        hasWhippedCream = toppingsCheckBox.isChecked();
     }
 
     /**

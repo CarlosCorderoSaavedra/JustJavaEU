@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+<LinearLayout
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -22,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="@string/check_box_text"
-        android:id="@+id/check_box"
+        android:id="@+id/whipped_cream_check_box"
         android:paddingLeft="@dimen/text_check_box_spacing"/>
 
 </LinearLayout>
@@ -97,3 +102,4 @@
         android:onClick="submitOrder"
         android:layout_marginTop="16dp"/>
 </LinearLayout>
+</ScrollView>
