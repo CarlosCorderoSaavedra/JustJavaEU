@@ -4,8 +4,9 @@
     <string name="button_order">ORDER</string>
     <string name="button_increment">+</string>
     <string name="button_decrement">-</string>
-    <string name="text_price">Order summary</string>
-    <string name="check_box_text">Whipped Cream</string>
-    <string name="text_toppings">toppings Cream</string>
-    <string name="text_default_quantity">0</string>
+    <string name="text_order_summary">Order summary</string>
+    <string name="check_box_whipped_cream">Whipped Cream</string>
+    <string name="check_box_chocolate">Chocolate</string>
+    <string name="text_toppings">toppings</string>
+    <string name="text_default_quantity">2</string>
 </resources>
