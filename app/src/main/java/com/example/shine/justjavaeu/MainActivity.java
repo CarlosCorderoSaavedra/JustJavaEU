@@ -6,6 +6,10 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import static android.os.Build.VERSION_CODES.M;
+import static android.os.Build.VERSION_CODES.N;
 
 /**
  * This app displays an order form to order coffee.
@@ -24,16 +28,24 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the plus button is clicked.
      */
     public void increment(View view) {
-        quantity = quantity + 1;
-        displayQuantity(quantity);
+        if (quantity < 100) {
+            quantity = quantity + 1;
+            displayQuantity(quantity);
+        } else {
+            Toast.makeText(this, "You cannot have more than 100 coffee", Toast.LENGTH_SHORT).show();
+        }
     }
 
     /**
      * This method is called when the minus button is clicked.
      */
     public void decrement(View view) {
-        quantity = quantity - 1;
-        displayQuantity(quantity);
+        if (quantity>1) {
+            quantity = quantity - 1;
+            displayQuantity(quantity);
+        }else{
+            Toast.makeText(this,"You cannot have less than 1 coffee",Toast.LENGTH_SHORT).show();
+        }
     }
 
     /**
@@ -53,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         String userName  = nameEditText.getText().toString();
 
         // Calculate the price
-        int price = calculatePrice();
+        int price = calculatePrice(hasChocolate,hasWhippedCream);
 
         // Display the order summary on the screen
         String message = createOrderSummary(price, hasWhippedCream, hasChocolate, userName);
@@ -65,8 +77,15 @@ public class MainActivity extends AppCompatActivity {
      *
      * @return total price
      */
-    private int calculatePrice() {
-        return quantity * 5;
+    private int calculatePrice(boolean addWhippedCream , boolean addChocolate) {
+        int price=5;
+        if(addChocolate){
+            price = price +2;
+        }else if(addWhippedCream){
+            price = price + 1;
+        }
+
+        return price * quantity;
     }
 
     /**
@@ -82,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         priceMessage += "\nAdd whipped cream? " + addWhippedCream;
         priceMessage += "\nAdd chocolate? " + addChocolate;
         priceMessage += "\nQuantity: " + quantity;
-        priceMessage += "\nTotal: $" + price;
+        priceMessage += "\nTotal: " + price + "€";
         priceMessage += "\nThank you!";
         return priceMessage;
     }
