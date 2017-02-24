@@ -2,14 +2,5 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="margin_botton">16dp</dimen>
-    <dimen name="margin_top">16dp</dimen>
-    <dimen name="margin_left">8dp</dimen>
-    <dimen name="margin_right">8dp</dimen>
 
-    <dimen name="padding_activity">16dp</dimen>
-    <dimen name="text_check_box_spacing">24dp</dimen>
-    <dimen name="text_size_home">24dp</dimen>
-    <dimen name="button_width">48dp</dimen>
-    <dimen name="button_height">48dp</dimen>
 </resources>

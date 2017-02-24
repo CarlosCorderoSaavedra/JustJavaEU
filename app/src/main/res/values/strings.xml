@@ -47,17 +47,17 @@
       Subject line for the order summary email. It will be in the format of
       "Just Java order for Amy" where Amy is the user's name. [CHAR LIMIT=NONE]
     -->
-    <string name="order_summary_email_subject">Just Java order for <xliff:g id="name" example="Amy">%s</xliff:g></string>
+    <string name="order_summary_email_subject">Just Java order for <xliff:g id="name" example="Amy">%s</xliff:g></string><![CDATA[
 =======
-    <string name="text_quantity">QUANTITY</string>
-    <string name="button_order">ORDER</string>
-    <string name="default_price">0€</string>
-    <string name="button_increment">+</string>
-    <string name="button_decrement">-</string>
-    <string name="text_order_summary">Order summary</string>
-    <string name="check_box_whipped_cream">Whipped Cream</string>
-    <string name="check_box_chocolate">Chocolate</string>
-    <string name="text_toppings">toppings</string>
-    <string name="text_default_quantity">2</string>
->>>>>>> origin/master
+
+
+
+
+
+
+
+
+
+    >>>>>>> origin/master
+]]>
 </resources>
